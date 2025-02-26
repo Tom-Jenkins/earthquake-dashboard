@@ -1,0 +1,9 @@
+:root {
+    --colour-white: #FDFDFD;
+    --colour-black: #2c2c2c;
+
+    --magnitude1: green;
+    --magnitude2pt5: yellow;
+    --magnitude4pt4: orange;
+    --magnitude-sig: red;
+}
