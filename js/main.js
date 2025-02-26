@@ -48,7 +48,7 @@ function initialiseMap () {
         zoom: 2,
         maxZoom: 15,
     });
-    OpenStreetMap_Mapnik.addTo(map); // add tiles to map
+    USGS_USImageryTopo.addTo(map); // add tiles to map
     // earth.setView([51,0], 2) // set view and zoom
 
     // marker = WE.marker([51.5, -0.09]).addTo(earth);
