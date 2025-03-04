@@ -151,7 +151,7 @@
 
 .dropdown-open {
     visibility: visible;
-    height: 50vh;
+    height: 40vh;
     max-height: fit-content;
     overflow-y: auto;
     transition: all 1s ease;
@@ -223,6 +223,7 @@
     border-radius: 30px;
     padding: 3px 10px;
     margin: 5px 2.5px;
+    margin-left: 0;
     background-color: var(--colour-white);
     color: var(--colour-black);
     cursor: pointer;
@@ -259,8 +260,26 @@
 }
 
 
-/* Change dropdpwn width for smaller screens */
+/* Change styles for smaller screens */
 @media (max-width: 768px) {
+
+    .flex-container {
+        height: auto !important;
+        min-height: 100vh;
+    }
+
+    .box-1, .box-2, .box-3 {
+        height: 100px;
+    }
+
+    .box-title, .box-footer {
+        margin-right: 35%;
+    }
+
+    .box-value, .box-list {
+        margin-left: auto;
+    }
+
     .dropdown {
         width: 100%;
     }

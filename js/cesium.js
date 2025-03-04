@@ -54,11 +54,12 @@ export function flyToContinent (viewer, continent) {
 };
 
 // Cesium popup HTML content for each entity
-export const entityPopupContent = function (mag, lon, lat, time, place, usgsUrl) {
+export const entityPopupContent = function (mag, depth, lon, lat, time, place, usgsUrl) {
     const html = `
-        <div class="entity-popup">
+        <div>
             <p>Magnitude: ${mag}</p>
-            <p>Location: <a href="${usgsUrl}" target="_blank" style="color: #aef;">${place}</a></p>
+            <p>Depth: ${depth.toFixed(0)} km</p>
+            <p>Origin: <a href="#" class="usgs-link" data-url="${usgsUrl}" style="color: #aef; text-decoration: none;">${place}</a></p>
             <p>Coordinates: ${lat.toFixed(2)}, ${lon.toFixed(2)} (Lat, Lon)</p>
             <p>Datetime: ${formatDateTime(time)}</p>
         </div>

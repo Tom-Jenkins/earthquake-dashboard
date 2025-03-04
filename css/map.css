@@ -52,10 +52,8 @@
     /* font-size: 1.5rem; */
     /* height: fit-content !important; */
 /* } */
-
-/* Cesium entity descriptions */
-.entity-popup > * {
-    font-size: 3rem !important;
+.cesium-infoBox {
+    width: fit-content !important;
 }
 
 

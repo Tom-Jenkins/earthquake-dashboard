@@ -58,7 +58,7 @@ export async function fetchEarthQuakes(viewer) {
         // API results
         if (response.ok) {
             const results = await response.json();
-            console.log(results);
+            // console.log(results);
 
             // Update earthquake total on DOM
             earthquakeTotalDOM.textContent = results.metadata.count;
@@ -118,7 +118,7 @@ export async function fetchEarthQuakes(viewer) {
                 viewer.entities.add({
                     position: Cesium.Cartesian3.fromDegrees(xyz.longitude, xyz.latitude, xyz.depth),
                     name: `${place}`,
-                    description: entityPopupContent(magnitude, xyz.longitude, xyz.latitude, time, place, usgsURL),
+                    description: entityPopupContent(magnitude, xyz.depth, xyz.longitude, xyz.latitude, time, place, usgsURL),
                     point: { 
                         show: true,
                         pixelSize: 12, 

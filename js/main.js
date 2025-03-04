@@ -87,6 +87,29 @@ if (viewer) {
     });
 };
 
+// Workaround to Cesium iframe blocking hyperlinks in entity popups
+// Handle link clicks on popups from parent page
+if (viewer) {
+    viewer.selectedEntityChanged.addEventListener((entity) => {
+        if (entity) {
+            setTimeout(() => {
+                let infoBoxDocument = viewer.infoBox.frame.contentDocument;
+                let links = infoBoxDocument.querySelectorAll(".usgs-link");
+    
+                links.forEach(link => {
+                    link.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        let url = link.getAttribute("data-url");
+
+                        // Open in a new tab from parent window
+                        window.open(url, "_blank", "noopener,noreferrer"); 
+                    });
+                });
+            }, 100); // short delay to ensure InfoBox content loads
+        }
+    });
+};
+
 
 // ---------- //
 // Dropdown Menu Functionality
