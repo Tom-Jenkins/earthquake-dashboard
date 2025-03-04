@@ -71,14 +71,14 @@ try {
 // Fetch Earthquake Data from API
 // ---------- //
 
-// Fetch earthquake data and add to Cesium map
+// Fetch earthquake data and add to Cesium map if tiles were rendered
 if (viewer) {
     fetchEarthQuakes(viewer);
 };
 
 // Re-fetch earthquakes when user clicks fetch data button
-const fetchDataBtn = document.getElementById("btn-fetch-data");
 if (viewer) {
+    const fetchDataBtn = document.getElementById("btn-fetch-data");
     fetchDataBtn.addEventListener("click", () => {
         // Remove all points previously on viewer
         viewer.entities.removeAll();
@@ -105,10 +105,8 @@ iconMenu.addEventListener("click", (e) => {
 // Contintent Camera Views
 // ---------- //
 
-// Buttons from DOM
-const btnsContinentZoom = document.querySelectorAll(".btn-continent-zoom button");
-
 // Add event listeners to all zoom buttons in dropdown
+const btnsContinentZoom = document.querySelectorAll(".btn-continent-zoom button");
 btnsContinentZoom.forEach(button => {
     const continent = button.textContent;
     button.addEventListener("click", (e) => {

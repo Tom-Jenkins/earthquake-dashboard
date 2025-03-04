@@ -54,12 +54,19 @@ export function flyToContinent (viewer, continent) {
 };
 
 // Cesium popup HTML content for each entity
-export const entityPopupContent = function (lon, lat, time) {
+export const entityPopupContent = function (mag, lon, lat, time, place, usgsUrl) {
     const html = `
-        Custom HTML Content goes here! (${lon}, ${lat}, ${formatDateTime(time)});
+        <div class="entity-popup">
+            <p>Magnitude: ${mag}</p>
+            <p>Location: <a href="${usgsUrl}" target="_blank" style="color: #aef;">${place}</a></p>
+            <p>Coordinates: ${lat.toFixed(2)}, ${lon.toFixed(2)} (Lat, Lon)</p>
+            <p>Datetime: ${formatDateTime(time)}</p>
+        </div>
     `;
     return(html);
 };
+
+
 
 // viewer.scene.globe.translucency.enabled = true;
 

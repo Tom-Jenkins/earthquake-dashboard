@@ -48,10 +48,16 @@
     &:active {background-color: transparent !important;}
     /* &:focus {background: transparent !important;} */
 }
-.cesium-infoBox-title {
+/* .cesium-infoBox-title { */
     /* font-size: 1.5rem; */
     /* height: fit-content !important; */
+/* } */
+
+/* Cesium entity descriptions */
+.entity-popup > * {
+    font-size: 3rem !important;
 }
+
 
 /* Legend */
 .legend {

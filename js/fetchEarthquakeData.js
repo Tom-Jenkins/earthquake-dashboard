@@ -58,7 +58,7 @@ export async function fetchEarthQuakes(viewer) {
         // API results
         if (response.ok) {
             const results = await response.json();
-            // console.log(results);
+            console.log(results);
 
             // Update earthquake total on DOM
             earthquakeTotalDOM.textContent = results.metadata.count;
@@ -108,16 +108,17 @@ export async function fetchEarthQuakes(viewer) {
                 const magnitudeColour = calcMagnitudeColour(magnitude);
 
                 // Using destructuring extract place, time, etc.
-                const [place, time] = [
+                const [place, time, usgsURL] = [
                     results.features[i].properties.place,
                     results.features[i].properties.time,
+                    results.features[i].properties.url,
                 ];
 
                 // Add earthquakes to Cesium viewer
                 viewer.entities.add({
                     position: Cesium.Cartesian3.fromDegrees(xyz.longitude, xyz.latitude, xyz.depth),
                     name: `${place}`,
-                    description: entityPopupContent(xyz.longitude, xyz.latitude, time),
+                    description: entityPopupContent(magnitude, xyz.longitude, xyz.latitude, time, place, usgsURL),
                     point: { 
                         show: true,
                         pixelSize: 12, 
