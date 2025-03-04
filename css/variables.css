@@ -1,9 +1,17 @@
 :root {
     --colour-white: #FDFDFD;
     --colour-black: #2c2c2c;
+    --colour-grey: #E0E0E0;
 
-    --magnitude1: green;
-    --magnitude2pt5: yellow;
-    --magnitude4pt4: orange;
-    --magnitude-sig: red;
+    --colour-primary: #1a2332;
+    --colour-secondary: #2b3b4b;
+    --colour-hover: #aef;
+    
+    --magnitude-yellow: #ffc107;
+    --magnitude-orange: #ff9800;
+    --magnitude-red: #dc3545;
+
+    --opacity: .75;
+    --padding-space: 5px;
+    --border-corner: 5px;
 }

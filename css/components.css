@@ -1,0 +1,264 @@
+.title {
+    background-color: var(--colour-secondary);
+    color: var(--colour-white);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    padding: 5px 10px;
+    font-size: 3.5rem;
+    letter-spacing: 5px;
+    border-radius: var(--border-corner);
+}
+
+.icon-container {
+    margin-bottom: -8px;
+}
+
+.icon-logo {
+    fill: var(--colour-white);
+    width: 4rem;
+    cursor: pointer;
+
+    &:hover {
+        fill: var(--colour-hover);
+    }
+}
+
+.icon-menu {
+    fill: var(--colour-white);
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+        fill: var(--colour-hover);
+    }
+}
+
+/* .icon-info {
+    fill: aquamarine;
+    width: 30px;
+    height: 30px;
+    background-color: var(--colour-black);
+    border-radius: 50%;
+    padding: 3.5px;
+} */
+
+
+.box {
+    display: flex;
+    flex: 1;
+    background-color: var(--colour-secondary);
+    padding: 5px 10px;
+    border-radius: var(--border-corner);
+    position: relative;
+}
+
+.box-1 {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    /* margin: auto; */
+}
+
+.box-2 {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.box-3 {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.box-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    color: var(--colour-white);
+    font-size: 2rem;
+}
+
+.box-value {
+    color: var(--colour-white);
+    font-size: 5rem;
+}
+
+.box-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    color: var(--colour-white);
+    font-size: 1rem;
+}
+
+.box-list {
+    color: var(--colour-white);
+    font-size: 3rem;
+
+    & > div > .circle {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+        
+    }
+}
+
+.box-highest {
+    color: var(--colour-white);
+    font-size: 2.5rem;
+}
+
+.box-highest-earthquake {
+    color: inherit;
+
+    & > a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            color: var(--colour-hover);
+        }
+    }
+}
+
+.box-countries {
+    color: var(--colour-white);
+    font-size: 2rem;
+    width: 100%;
+    max-height: 70%;
+}
+
+
+.dropdown {
+    position: absolute;
+    top: var(--padding-space);
+    right: 0;
+    background-color: var(--colour-secondary);
+    opacity: .95;
+    border-radius: var(--border-corner);
+    width: 38%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+.dropdown-open {
+    visibility: visible;
+    height: 50vh;
+    max-height: fit-content;
+    overflow-y: auto;
+    transition: all 1s ease;
+}
+
+.dropdown-content {
+    color: var(--colour-white);
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Make the content appear slightly after opening start */
+.dropdown-open .dropdown-content {
+    opacity: 1;
+    transition-delay: .1s;
+}
+
+
+/* Slider */
+.slider input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 75%;
+    height: 2.8rem;
+    cursor: pointer;
+    background-color: var(--colour-white);
+    color: var(--colour-black);
+    font-size: 1.8rem;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.slider label {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.slider label > span {
+    cursor: inherit;
+    display: inline-block;
+    text-align: center;
+    line-height: 2;
+    user-select: none;
+    z-index: 100;
+}
+
+.slider label:has(input:checked) {
+    background-color: var(--colour-hover);
+}
+
+
+.btn {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 30px;
+    padding: 3px 10px;
+    background-color: var(--colour-white);
+    color: var(--colour-black);
+    cursor: pointer;
+    font-size: 1.8rem;
+
+    &:hover {
+        background-color: var(--colour-hover);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+
+.spinner {
+    display: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    top: .1rem;
+    right: -35px;
+    border: .3rem solid var(--colour-black);
+    border-top-color: var(--colour-hover);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Change dropdpwn width for smaller screens */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 100%;
+    }
+}

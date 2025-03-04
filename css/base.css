@@ -3,7 +3,7 @@
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 /* 
@@ -15,16 +15,34 @@ This font size defines the value of 1rem, as rem units are relative to the root 
 
 html {
     font-size : 62.5%;
-    box-sizing: border-box;
 }
 
+/* Change size for smaller screens */
 @media (max-width: 768px) {
     html {
-        font-size : 50%;
-        box-sizing: border-box;
+        font-size: 50%;
     }
 }
 
-/* body {
-    background-color: var(--colour-black);
-} */
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: start;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: start;
+}

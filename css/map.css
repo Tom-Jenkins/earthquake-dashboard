@@ -1,0 +1,118 @@
+#cesiumContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: var(--border-corner);
+    overflow: hidden;
+    /* border-top: 2px solid var(--colour-white); */
+}
+
+/* Ensure cesium canvas takes up entire viewport */
+.cesium-widget canvas {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+/* Hide all these elements in Cesium app */
+.cesium-credit-textContainer,
+.cesium-baseLayerPicker-categoryTitle,
+.cesium-baseLayerPicker-sectionTitle,
+.cesium-baseLayerPicker-section[data-bind="foreach: _terrainProviders"],
+.cesium-baseLayerPicker-item[title^="Bing Maps standard road maps"],
+.cesium-baseLayerPicker-item[title^="Sentinel-2"],
+.cesium-baseLayerPicker-item[title^="The Earth at night, also known as The Black Marble"],
+.cesium-baseLayerPicker-item[title^="Blue Marble Next Generation July"],
+.cesium-baseLayerPicker-item[title^="ArcGIS World Hillshade"],
+.cesium-baseLayerPicker-item[title*="Stadia"],
+.cesium-baseLayerPicker-item[title*="Stamen"],
+.cesium-button.cesium-infoBox-camera {
+    display: none !important;
+}
+
+/* Edit Cesium defaults */
+.cesium-baseLayerPicker-dropDown.cesium-baseLayerPicker-dropDown-visible,
+.cesium-baseLayerPicker-dropDown {
+    width: max-content !important;
+}
+.cesium-button:focus {
+    border-color: transparent !important;
+}
+.cesium-credit-expand-link {
+    &:hover {
+        color: var(--colour-hover);
+    }
+}
+.cesium-infoBox-close {
+    &:hover {background-color: var(--colour-hover) !important;}
+    &:active {background-color: transparent !important;}
+    /* &:focus {background: transparent !important;} */
+}
+.cesium-infoBox-title {
+    /* font-size: 1.5rem; */
+    /* height: fit-content !important; */
+}
+
+/* Legend */
+.legend {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: fit-content;
+    background-color: rgba(43, 59, 75, .75); /* opacity here to avoid text legend opacity */
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.legend--title {
+    color: var(--colour-white);
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.legend--text {
+    color: var(--colour-white);
+    position: relative;
+    top: -5px;
+    padding: 0 8px;
+    font-size: 15px;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle--yellow {
+    background-color: var(--magnitude-yellow);
+}
+.circle--orange {
+    background-color: var(--magnitude-orange);
+}
+.circle--red {
+    background-color: var(--magnitude-red);
+}
+
+/* USGS credit */
+.usgs-credit {
+    position: absolute;
+    bottom: 35px;
+    left: 10px;
+    z-index: 1000;
+    color: var(--colour-white);
+    font-size: 18px;
+    
+    & > a {
+        font-size: 10px;
+        text-decoration: underline;
+        color: var(--colour-white);
+
+        &:hover {
+            color: var(--colour-hover);
+        }
+    }
+}
