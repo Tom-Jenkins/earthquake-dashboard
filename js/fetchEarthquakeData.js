@@ -37,9 +37,12 @@ export async function fetchEarthQuakes(viewer) {
         // Activate spinners
         spinner.forEach(spinner => spinner.style.display = "inline-block");
 
+        // Current date and time
+        const currentDateTime = new Date();
+
         // Get days to fetch from checked slider value
         daysToFetch = Number(document.querySelector("input[type='radio']:checked").value);
-
+        
         // Date object with the number of days to request data
         const daysRequested = new Date();
         daysRequested.setDate(daysRequested.getDate() - daysToFetch);
@@ -67,7 +70,7 @@ export async function fetchEarthQuakes(viewer) {
             daysDataDOM.textContent = daysToFetch === 1 ? "24 Hours" : `${daysToFetch} Days`;
 
             // Format and update time on data retrieved box
-            footerTimeDOM.textContent = `Data retrieved: ${formatDateTime(daysRequested)}`;
+            footerTimeDOM.textContent = `Data retrieved: ${formatDateTime(currentDateTime)}`;
             // footerTimeDOM.textContent = "Error retrieving data – please try again later or check internet connection";
             // footerTimeDOM.style.color = "var(--magnitude-red)";
 
