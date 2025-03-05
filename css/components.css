@@ -291,6 +291,10 @@
         width: 100%;
         opacity: 1;
     }
+
+    .dropdown-open {
+        border-bottom: 2px solid var(--colour-hover);
+    }
 }
 
 /* Change styles for different screens */
