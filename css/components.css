@@ -304,4 +304,8 @@
     .box-value, .box-list, .box-highest {
         margin-left: auto;
     }
+
+    .box-highest {
+        font-size: 2rem;
+    }
 }
