@@ -294,6 +294,7 @@
 
     .dropdown-open {
         border-bottom: 2px solid var(--colour-hover);
+        height: 345px;
     }
 }
 
