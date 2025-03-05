@@ -1,7 +1,7 @@
 "use strict";
 
 // Import functions from modules
-import { calcMagnitudeColour, formatDateTime, entityPopupContent } from "./cesium.js";
+import { calcMagnitudeColour, formatDateTime, flyToStrongestEarthquake, entityPopupContent } from "./cesium.js";
 
 // Get elements from DOM
 const earthquakeTotalDOM = document.getElementById("earthquake-total");
@@ -84,14 +84,22 @@ export async function fetchEarthQuakes(viewer) {
             const highestMag = results.features[highestMagIndex].properties.mag;
             const highestMagPlace = results.features[highestMagIndex].properties.place;
             const highestMagLink = results.features[highestMagIndex].properties.url;
+            const strongestLon = results.features[highestMagIndex].geometry.coordinates[0];
+            const strongestLat = results.features[highestMagIndex].geometry.coordinates[1];
             const highestMagTime = formatDateTime(results.features[highestMagIndex].properties.time);
 
             // Update highest earthquake by magnitude box
             highestEarthquakeDOM.innerHTML = `
-                <a href="${highestMagLink}" target="_blank">M ${highestMag} – ${highestMagPlace}</a>
+                <a id="XXX">M ${highestMag} – ${highestMagPlace}</a>
                 <br>
                 <span class="box-footer">Earthquake time: ${highestMagTime}</span>
             `;
+
+            // Add event listener to strongest earthquake which zooms in on origin
+            document.getElementById("XXX").addEventListener("click", (e) => {
+                e.preventDefault();
+                flyToStrongestEarthquake(viewer, strongestLon, strongestLat, 1000000)
+            });
 
 
             for (let i = 0; i < results.features.length; i++) {

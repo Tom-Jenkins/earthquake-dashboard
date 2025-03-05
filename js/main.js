@@ -123,6 +123,13 @@ iconMenu.addEventListener("click", (e) => {
     dropdown.classList.toggle("dropdown-open");
 });
 
+// Close dropdown menu when button clicked
+const btnDropdown = document.getElementById("btn-close-dropdown");
+btnDropdown.addEventListener("click", (e) => {
+    e.preventDefault();
+    dropdown.classList.remove("dropdown-open");
+});
+
 
 // ---------- //
 // Contintent Camera Views
@@ -145,7 +152,7 @@ btnsContinentZoom.forEach(button => {
 
 // Run these functions on window load
 window.addEventListener("load", () => {
-
+    
 });
 
 // ---------- //

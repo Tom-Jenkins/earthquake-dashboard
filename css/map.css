@@ -54,6 +54,7 @@
 /* } */
 .cesium-infoBox {
     width: fit-content !important;
+    max-width: 400px !important;
 }
 
 
@@ -78,10 +79,21 @@
 
 .legend--text {
     color: var(--colour-white);
-    position: relative;
     top: -5px;
     padding: 0 8px;
     font-size: 15px;
+    position: absolute;
+    top: 2px;
+    left: 22px;
+}
+
+.circle--container {
+    padding: 2px 0;
+}
+
+/* Apply no bottom padding to last circle */
+.circle--container:has(.circle--yellow) {
+    padding-bottom: 0;
 }
 
 .circle {
@@ -89,6 +101,7 @@
     width: 20px;
     border-radius: 50%;
     display: inline-block;
+    position: relative;
 }
 
 .circle--yellow {

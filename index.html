@@ -28,7 +28,7 @@
                     </a>
                 </div>
                 
-                <div>
+                <div class="title--text">
                     Real-Time Earthquakes Dashboard
                 </div>
                 
@@ -51,7 +51,8 @@
                             <div class="box-title">
                                 Earthquakes In The Last <span id="days-data"></span>
                             </div>
-                            <div class="box-value" id="earthquake-total"></div><div class="spinner" style="position: relative;"></div>
+                            <div class="box-value" id="earthquake-total"></div>
+                            <!-- <div class="spinner"></div> -->
                             <div class="box-footer box-footer-time"></div>
                         </div>
                     </div>
@@ -98,17 +99,14 @@
 
                         <div class="legend">
                             <div class="legend--title">Magnitude</div>
-                            <div>
-                                <span class="circle circle--red"></span>
-                                <span class="legend--text">4.5+</span>
+                            <div class="circle--container">
+                                <span class="circle circle--red"><span class="legend--text">4.5+</span></span>
                             </div>
-                            <div>
-                                <span class="circle circle--orange"></span>
-                                <span class="legend--text">2.5+</span>
+                            <div class="circle--container">
+                                <span class="circle circle--orange"><span class="legend--text">2.5+</span></span>
                             </div>
-                            <div>
-                                <span class="circle circle--yellow"></span>
-                                <span class="legend--text">1.0+</span>
+                            <div class="circle--container">
+                                <span class="circle circle--yellow"><span class="legend--text">1.0+</span></span>
                             </div>
                         </div>
 
@@ -126,7 +124,12 @@
                             <br><br>
 
                             <p>
-                                This dashboard presents <span style="color: var(--colour-hover);">earthquake</span> data from the <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" target="_blank"><span style="color: var(--colour-hover);">United States Geological Survey API</span></a>. By default, earthquakes reported in the last 24 hours are displayed and are categorised by their magnitude. To view more information about an earthquake, click or tap any point on the map. You can zoom to a continent or select the number of days to display data below.
+                                This dashboard presents <span style="color: var(--colour-hover);">earthquake</span> data from the <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php" target="_blank"><span style="color: var(--colour-hover);">United States Geological Survey API</span>
+                                    <svg class="icon-arrow-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                                    </svg>
+                                </a>. By default, earthquakes reported in the last 24 hours are displayed and are categorised by their magnitude. To view more information about an earthquake, click or tap any point on the map. You can zoom to a continent or select the number of days to display data below.
                             </p>
 
                             <br><br>
@@ -190,11 +193,21 @@
                             </div>
                             
                             <br>
-                            <button type="button" class="btn" id="btn-fetch-data">Reload Map <div class="spinner"></div></button>
+                            <button type="button" class="btn" id="btn-fetch-data">Reload Map<div class="spinner"></div></button>
 
                             <br><br><br>
                             <p>Dashboard: Tom Jenkins</p>
-                            <p>Website: <a style="text-decoration: none; color: var(--colour-hover);" href="https://tjdatavisualisation.netlify.app/" target="_blank">TJ Data Visualisation</a></p>
+                            <p>
+                                Website: <a style="text-decoration: none; color: var(--colour-hover);" href="https://tjdatavisualisation.netlify.app/" target="_blank">TJ Data Visualisation
+                                    <svg class="icon-arrow-external" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+                                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+                                    </svg>
+                                </a>
+                            </p>
+
+                            <br>
+                            <button style="font-size: 1.5rem;" type="button" class="btn" id="btn-close-dropdown">Close</button>
 
                         </div>
                     </div>

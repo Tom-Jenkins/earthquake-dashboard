@@ -13,16 +13,37 @@ This font size defines the value of 1rem, as rem units are relative to the root 
 1rem = 10px, 10px/16px = 62.5%
 */
 
-html {
+/* html {
     font-size : 62.5%;
-}
+} */
 
-/* Change size for smaller screens */
-@media (max-width: 768px) {
+/* Screen size breakpoints */
+@media (min-width: 1400px) {
     html {
-        font-size: 50%;
+        font-size: 70%;
     }
 }
+@media (max-width: 1400px) {
+    html {
+        font-size: 65%;
+    }
+}
+@media (max-width: 1200px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 60%;
+    }
+}
+@media (max-width: 576px) {
+    html {
+        font-size: 55%;
+    }
+}
+
 
 body {
     font-family: sans-serif;
@@ -45,4 +66,10 @@ p {
     font-size: 1.5rem;
     font-weight: normal;
     text-align: start;
+}
+
+a {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    cursor: pointer;
 }
