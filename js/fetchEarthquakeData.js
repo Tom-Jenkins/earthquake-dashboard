@@ -93,13 +93,14 @@ export async function fetchEarthQuakes(viewer) {
 
             // Update highest earthquake by magnitude box
             highestEarthquakeDOM.innerHTML = `
-                <a id="XXX">M ${highestMag} – ${highestMagPlace}</a>
+                <a id="earthquake-flytozoom">M ${highestMag} – ${highestMagPlace}</a>
                 <br>
                 <span class="box-footer">Earthquake time: ${highestMagTime}</span>
             `;
 
             // Add event listener to strongest earthquake which zooms in on origin
-            document.getElementById("XXX").addEventListener("click", (e) => {
+            const earthquakeZoom = document.getElementById("earthquake-flytozoom");
+            earthquakeZoom.addEventListener("click", (e) => {
                 e.preventDefault();
                 flyToStrongestEarthquake(viewer, strongestLon, strongestLat, 1000000)
             });
