@@ -120,6 +120,7 @@ const iconMenu = document.querySelector(".icon-menu");
 const dropdown = document.querySelector(".dropdown");
 iconMenu.addEventListener("click", (e) => {
     e.preventDefault();
+    e.stopPropagation();
     dropdown.classList.toggle("dropdown-open");
 });
 
@@ -129,6 +130,30 @@ btnDropdown.addEventListener("click", (e) => {
     e.preventDefault();
     dropdown.classList.remove("dropdown-open");
 });
+
+// Close dropdown menu when clicking outside of it
+document.addEventListener("click", (e) => {
+    if (dropdown.classList.contains("dropdown-open")) {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("dropdown-open");
+        };
+    };
+});
+
+// const dropdownContent = document.querySelector(".dropdown-content");
+// document.addEventListener("click", (e) => {
+//     e.preventDefault();
+
+//     // Ensure dropdown exists before proceeding
+//     if (!dropdown || !dropdownContent) return;
+
+//     // Check if the clicked element is NOT inside the dropdown content
+//     const isClickInside = dropdownContent.contains(e.target);
+
+//     if (!isClickInside) {
+//         dropdown.classList.remove("dropdown-open");
+//     }
+// });
 
 
 // ---------- //

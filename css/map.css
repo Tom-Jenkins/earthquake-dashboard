@@ -40,7 +40,7 @@
 }
 .cesium-credit-expand-link {
     &:hover {
-        color: var(--colour-hover);
+        color: var(--colour-hover) !important;
     }
 }
 .cesium-infoBox-close {

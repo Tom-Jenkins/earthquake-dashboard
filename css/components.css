@@ -161,7 +161,7 @@
     color: var(--colour-white);
     padding: 20px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    /* transition: opacity .1s ease; */
 }
 
 /* Make the content appear slightly after opening start */
