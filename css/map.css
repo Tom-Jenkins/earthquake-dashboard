@@ -44,19 +44,31 @@
     }
 }
 .cesium-infoBox-close {
+    top: .8rem !important;
+    height: 1.6rem !important;
+    margin-top: .1rem !important;
+
     &:hover {background-color: var(--colour-hover) !important;}
     &:active {background-color: transparent !important;}
     /* &:focus {background: transparent !important;} */
 }
-/* .cesium-infoBox-title { */
-    /* font-size: 1.5rem; */
-    /* height: fit-content !important; */
-/* } */
+
+
+/* Popup */
 .cesium-infoBox {
     width: fit-content !important;
-    max-width: 400px !important;
+    min-width: 350px !important;
+    /* max-width: 400px !important; */
 }
 
+.cesium-infoBox-title {
+    font-size: 2rem;
+    height: max-content !important;
+}
+
+/* .cesium-infoBox-description {
+    height: 100% !important;
+} */
 
 /* Legend */
 .legend {
