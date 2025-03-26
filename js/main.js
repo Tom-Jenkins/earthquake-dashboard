@@ -102,7 +102,7 @@ if (viewer) {
                         let url = link.getAttribute("data-url");
 
                         // Open in a new tab from parent window
-                        window.parent.open(url, "_blank", "noopener,noreferrer"); 
+                        window.open(url, "_blank", "noopener,noreferrer"); 
                     });
                 });
             }, 100); // short delay to ensure InfoBox content loads
