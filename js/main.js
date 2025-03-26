@@ -105,7 +105,7 @@ if (viewer) {
                         window.open(url, "_blank", "noopener,noreferrer"); 
                     });
                 });
-            }, 500); // short delay to ensure InfoBox content loads
+            }, 100); // short delay to ensure InfoBox content loads
         }
     });
 };
