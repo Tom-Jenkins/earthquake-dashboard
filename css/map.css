@@ -57,8 +57,14 @@
 /* Popup */
 .cesium-infoBox {
     width: fit-content !important;
-    min-width: 350px !important;
+    /* min-width: 350px !important; */
     /* max-width: 400px !important; */
+}
+
+@media (max-width: 576px) {
+    .cesium-infoBox {
+        max-width: 350px !important;
+    }
 }
 
 .cesium-infoBox-title {
