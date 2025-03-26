@@ -68,7 +68,7 @@
 }
 
 .cesium-infoBox-title {
-    font-size: 2rem;
+    font-size: 2rem !important;
     height: max-content !important;
 }
 
