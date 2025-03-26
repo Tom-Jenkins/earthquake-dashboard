@@ -7,11 +7,13 @@ import { calcMagnitudeColour, formatDateTime, flyToStrongestEarthquake, entityPo
 const earthquakeTotalDOM = document.getElementById("earthquake-total");
 const daysDataDOM = document.getElementById("days-data");
 const footerTimeDOM = document.querySelector(".box-footer-time");
+const footerMagnitudeDOM = document.querySelector(".box-footer-magnitudes");
 const magnitudeRedDOM = document.getElementById("magnitude-red");
 const magnitudeOrangeDOM = document.getElementById("magnitude-orange");
 const magnitudeYellowDOM = document.getElementById("magnitude-yellow");
 const highestEarthquakeDOM = document.querySelector(".box-highest-earthquake");
 const spinner = document.querySelectorAll(".spinner");
+const circles = document.querySelectorAll(".circle");
 
 // Initialise variables to keep count of magnitude category
 let magYellowCount = [], magOrangeCount = [], magRedCount = [], magnitudeCategory;
@@ -33,6 +35,15 @@ const baseUrl = `https://earthquake.usgs.gov/fdsnws/event/1/query?format=${forma
 export async function fetchEarthQuakes(viewer) {
 
     try {
+
+        // Clear value boxes text content
+        earthquakeTotalDOM.textContent = "";
+        magnitudeRedDOM.textContent = "";
+        magnitudeOrangeDOM.textContent = "";
+        magnitudeYellowDOM.textContent = "";
+        highestEarthquakeDOM.innerHTML = "";
+        circles.forEach(circle => circle.style.display = "none");
+        footerMagnitudeDOM.style.display = "none";
 
         // Activate spinners
         spinner.forEach(spinner => spinner.style.display = "inline-block");
@@ -163,6 +174,10 @@ export async function fetchEarthQuakes(viewer) {
 
             // Deactivate spinners
             spinner.forEach(spinner => spinner.style.display = "none");
+
+            // Re-activate text content
+            circles.forEach(circle => circle.style.display = "inline-block");
+            footerMagnitudeDOM.style.display = "inline-block";
         };
 
     } catch(error) {

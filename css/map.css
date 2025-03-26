@@ -102,6 +102,7 @@
     border-radius: 50%;
     display: inline-block;
     position: relative;
+    display: none;
 }
 
 .circle--yellow {

@@ -140,21 +140,6 @@ document.addEventListener("click", (e) => {
     };
 });
 
-// const dropdownContent = document.querySelector(".dropdown-content");
-// document.addEventListener("click", (e) => {
-//     e.preventDefault();
-
-//     // Ensure dropdown exists before proceeding
-//     if (!dropdown || !dropdownContent) return;
-
-//     // Check if the clicked element is NOT inside the dropdown content
-//     const isClickInside = dropdownContent.contains(e.target);
-
-//     if (!isClickInside) {
-//         dropdown.classList.remove("dropdown-open");
-//     }
-// });
-
 
 // ---------- //
 // Contintent Camera Views

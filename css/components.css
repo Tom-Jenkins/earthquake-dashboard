@@ -245,8 +245,6 @@
     width: 2.5rem;
     height: 2.5rem;
     position: absolute;
-    top: .1rem;
-    right: -35px;
     border: .3rem solid var(--colour-black);
     border-top-color: var(--colour-hover);
     border-radius: 50%;
@@ -256,6 +254,11 @@
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.spinner-dropdown {
+    top: 1px;
+    right: -45px;
 }
 
 
